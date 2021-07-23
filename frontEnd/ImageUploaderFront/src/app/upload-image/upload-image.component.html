@@ -6,9 +6,8 @@
             <img src="../../assets/images/image.svg" alt="pokemon.png">
             <p class="centerText imgText">Drag & Drop your image here</p>
         </div>
-        <p class="centerText">Or</p>
-        <input type="file" class="file-upload" onchange="console.log(event.target.files)">
+        <p class="centerText" style="margin-top: 7%;">Or</p>
+        <label for="uploadImage">Choose a file</label>
+        <input type="file" name="photo" id="uploadImage" onchange="console.log(event.target.files)" (change)="onFileSelected($event)" style="display: none;"/>
     </div>
-
-    
 </div>
