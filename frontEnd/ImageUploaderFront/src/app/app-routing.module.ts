@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 import { GaleryComponent } from './galery/galery.component';
 import { LoadingComponent } from './loading/loading.component';
 import { UploadImageComponent } from './upload-image/upload-image.component';
@@ -7,7 +8,8 @@ import { UploadImageComponent } from './upload-image/upload-image.component';
 const routes: Routes = [
   {path: 'loading', component: LoadingComponent},
   {path: 'galery', component: GaleryComponent},
-  {path: 'uploadImage', component: UploadImageComponent}
+  {path: 'uploadImage', component: UploadImageComponent},
+  {path: 'fileUpload', component: FileUploadComponent}
 ];
 
 @NgModule({

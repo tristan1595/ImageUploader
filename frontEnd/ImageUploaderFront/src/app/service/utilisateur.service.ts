@@ -12,7 +12,6 @@ export class UtilisateurService {
   utilisateurs: Array<Utilisateur> = new Array<Utilisateur>();
   
   constructor(private http: HttpClient, private appConfig: AppConfigService) { 
-    console.log("hey");
     this.load();
   }
 
@@ -36,14 +35,13 @@ export class UtilisateurService {
 
   deleteById(id: number) {
     this.http.delete(this.appConfig.backEndUrl + "utilisateur/" + id).subscribe(resp => {
-      this.load
+      this.load();
     }, error => console.log(error));
   }
 
   load() {
     this.http.get<Array<Utilisateur>>(this.appConfig.backEndUrl + "utilisateur").subscribe(resp => {
       this.utilisateurs = resp;
-      console.log(this.utilisateurs);
     }, error => console.log(error));
   }
 }
