@@ -8,10 +8,15 @@
         </div>
         <p class="centerText" style="margin-top: 7%;">Or</p>
         <label for="uploadImage">Choose a file</label>
-        <input type="file" name="photo" id="uploadImage" onchange="console.log(event.target.files)" (change)="onFileSelected($event)" accept="image/*" style="display: none;"/>
+        <input 
+            type="file" 
+            name="photo" 
+            id="uploadImage" 
+            onchange="console.log(event.target.files)" 
+            accept="image/*" 
+            style="display: none;"
+        />
     </div>
 </div>
 
-<div *ngIf="flag">
-    <!-- <h1>{{file.name}}</h1> -->
-</div>
+<!-- (change)="onFileSelected($event)" -->
