@@ -10,12 +10,16 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 
 import { GaleryComponent } from './galery/galery.component';
 import { UploadImageComponent } from './upload-image/upload-image.component';
+import { ConnexionComponent } from './connexion/connexion.component';
+import { InscriptionComponent } from './inscription/inscription.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GaleryComponent,
-    UploadImageComponent
+    UploadImageComponent,
+    ConnexionComponent,
+    InscriptionComponent
   ],
   imports: [
     BrowserModule,
