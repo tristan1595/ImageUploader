@@ -1,6 +1,13 @@
-<div class="mainContainer centerHandV">
-    <div *ngFor="let image of imageInfos | async" class="imageBlock">
-        <img src="{{image.url}}" width="60"/>
-        
+<div class="mainContainer">
+    <h1>Your image galery</h1>
+    <div class="galery">
+        <div *ngFor="let image of imageInfos | async" class="imageBlock">
+            <figure>
+                <img src="{{image.url}}" width="60"/>
+                <figcaption>
+                    <a href="{{ image.url }}">{{image.name}}</a>
+                </figcaption>
+            </figure>
+        </div>
     </div> 
 </div>
