@@ -1,12 +1,13 @@
 <div class="mainContainer">
     <h1>Your image galery</h1>
     <div class="galery">
-        <div *ngFor="let image of imageInfos | async" class="imageBlock">
+        <div *ngFor="let image of imageInfos | async; index as i" class="imageBlock" id="parent" (mouseenter)="displayDeleteIcon(i)" (mouseleave)="undisplayDeleteIcon(i)">
+            <fa-icon [icon]="faTrashAlt" class="deleteImage" (click)="deleteImage(image.id)" *ngIf="deleteIconFlag[i]"></fa-icon>
             <figure>
                 <img src="{{image.url}}" width="60"/>
                 <figcaption>
                     <a href="{{ image.url }}">{{image.name}}</a>
-                </figcaption>
+                </figcaption> 
             </figure>
         </div>
     </div> 

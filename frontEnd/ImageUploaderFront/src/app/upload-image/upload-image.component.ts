@@ -17,7 +17,6 @@ export class UploadImageComponent implements OnInit {
   selectedFileFlag: boolean = false;
 
   preview?: string;
-  imageInfos?: Observable<any>;
 
   loadedImage: boolean = false;
 
@@ -53,7 +52,6 @@ export class UploadImageComponent implements OnInit {
           }
           else if(event instanceof HttpResponse) {
             this.loadedImage = false;
-            //this.imageInfos = this.uploadService.getFiles();
             this.router.navigate(['/galery'])
           }
         }

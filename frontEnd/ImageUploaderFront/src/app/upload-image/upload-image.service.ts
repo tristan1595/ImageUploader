@@ -26,4 +26,8 @@ export class UploadImageService {
   getFiles(): Observable<any> {
     return this.http.get(this.appConfig.backEndUrl + '/files');
   }
+
+  deleteFiles(id: string): Observable<any> {
+    return this.http.delete(this.appConfig.backEndUrl + '/delete/' + id)
+  }
 }

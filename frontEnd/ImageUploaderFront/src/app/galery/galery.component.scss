@@ -16,7 +16,6 @@
     width: 140px;
     height: 100px;
 
-    
     background: #FFFFFF;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
@@ -38,4 +37,24 @@ h1 {
 
 .galery{
     text-align: center;
+}
+
+.deleteImage:nth-child(1){
+    position:absolute;
+    top:0;
+    right:0;    
+    margin: 10px;
+    color: #4F4F4F;
+} 
+
+.deleteImage:hover {
+    color: #929292;
+}
+
+.deleteImage:active {
+    color: rgba(255, 78, 78, 0.678);
+}
+
+#parent {
+    position:relative;
 }

@@ -1,21 +1,21 @@
 <div *ngIf="!loadedImage" class="mainContainer centerHandV">
     <h1 class="centerText">Upload your image</h1>
     <p class="centerText">File should be Jpeg or Png</p>
-    <div class="imageContainer">
+    <div class="imageContainer dropzone">
         <img *ngIf="!selectedFileFlag" src="../../assets/images/image.svg">
         <img *ngIf="selectedFileFlag" src="{{preview}}" width="100">
         <p class="centerText imgText">Drag & Drop your image here</p>
+        <input 
+            type="file" 
+            name="photo" 
+            id="selectImage" 
+            (change)="selectFiles($event)"
+            accept="image/*"
+        />
     </div>
     <p class="centerText" style="margin-top: 7%;">Or</p>
     <label for="selectImage">Choose image</label>
-    <input 
-        type="file" 
-        name="photo" 
-        id="selectImage" 
-        (change)="selectFiles($event)"
-        accept="image/*" 
-        style="display: none;"
-    />
+    
     <label for="uploadImage">Upload image</label>
     <input 
         type="button" 
@@ -25,6 +25,18 @@
     />
 </div>
 
+
+<!--
+<div class="dropzone">
+    <input type= "file" id="fileDropRef" (change)="selectFiles($event)"/>
+    <h3>Drag and drop file here</h3>
+    <img *ngIf="!selectedFileFlag" src="../../assets/images/image.svg">
+    <img *ngIf="selectedFileFlag" src="{{preview}}" width="100">
+    <h3>or</h3>
+    <label for="fileDropRef">Browse for file</label>
+</div>
+
 <div *ngIf="loadedImage">
     <h1>LALALLA</h1>
 </div>
+-->
