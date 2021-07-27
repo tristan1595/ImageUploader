@@ -1,22 +1,30 @@
-<div class="mainContainer centerHandV">
-    <div class="centerHandV">
-        <h1 class="centerText">Upload your image</h1>
-        <p class="centerText">File should be Jpeg or Png</p>
-        <div class="imageContainer">
-            <img src="../../assets/images/image.svg" alt="pokemon.png">
-            <p class="centerText imgText">Drag & Drop your image here</p>
-        </div>
-        <p class="centerText" style="margin-top: 7%;">Or</p>
-        <label for="uploadImage">Choose a file</label>
-        <input 
-            type="file" 
-            name="photo" 
-            id="uploadImage" 
-            onchange="console.log(event.target.files)" 
-            accept="image/*" 
-            style="display: none;"
-        />
+<div *ngIf="!loadedImage" class="mainContainer centerHandV">
+    <h1 class="centerText">Upload your image</h1>
+    <p class="centerText">File should be Jpeg or Png</p>
+    <div class="imageContainer">
+        <img *ngIf="!selectedFileFlag" src="../../assets/images/image.svg">
+        <img *ngIf="selectedFileFlag" src="{{preview}}" width="100">
+        <p class="centerText imgText">Drag & Drop your image here</p>
     </div>
+    <p class="centerText" style="margin-top: 7%;">Or</p>
+    <label for="selectImage">Choose image</label>
+    <input 
+        type="file" 
+        name="photo" 
+        id="selectImage" 
+        (change)="selectFiles($event)"
+        accept="image/*" 
+        style="display: none;"
+    />
+    <label for="uploadImage">Upload image</label>
+    <input 
+        type="button" 
+        id="uploadImage"
+        (click)="uploadFile()" 
+        style="display: none;"
+    />
 </div>
 
-<!-- (change)="onFileSelected($event)" -->
+<div *ngIf="loadedImage">
+    <h1>LALALLA</h1>
+</div>

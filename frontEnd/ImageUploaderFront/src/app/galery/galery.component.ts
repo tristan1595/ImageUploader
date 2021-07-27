@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { UploadImageService } from '../upload-image/upload-image.service';
 
 @Component({
   selector: 'app-galery',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GaleryComponent implements OnInit {
 
-  constructor() { }
+  imageInfos?: Observable<any>;
+
+  constructor(private uploadService: UploadImageService) { }
 
   ngOnInit(): void {
+    this.imageInfos = this.uploadService.getFiles();  
   }
-
 }
