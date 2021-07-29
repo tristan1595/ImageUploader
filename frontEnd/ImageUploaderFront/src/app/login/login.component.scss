@@ -42,8 +42,8 @@ input[type=password] {
     box-sizing: border-box    
 }
 
-input[type=submit] {
-    background-color: #4CAF50;
+button {
+    background: #2F80ED;
     color: white;
     border: none;
     border-radius: 4px;
@@ -59,6 +59,24 @@ input[type=submit] {
     height: 40px;
 }
   
-input[type=submit]:hover {
-    background-color: #45a049;
+button:hover {
+    background: #2361b3; 
+}
+
+h1 {
+    text-align: center;
+}
+
+.errorForm{
+    margin-top: 2%;
+    font-size: 12px;
+    color: rgba(255, 0, 0, 0.781);
+    text-align: center;
+}
+
+.successForm{
+    margin: 3%;
+    font-size: 16px;
+    text-align: center;
+    color: #5cb85c
 }

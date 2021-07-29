@@ -1,0 +1,55 @@
+<div class="mainContainer centerHandV">
+    <h1>Registration</h1>
+    <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+
+        <!-- Username -->
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" name="username" [(ngModel)]="form.username" required minlength="3" maxlength="20" #username="ngModel"/>
+            <!--Error username-->
+            <div class="errorForm" *ngIf="username.errors && f.submitted">
+                <div *ngIf="username.errors.required">Username is required</div>
+                <div *ngIf="username.errors.minlength">Username must be at least 3 characters</div>
+                <div *ngIf="username.errors.maxlength">Username must be at most 20 characters</div>
+            </div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email #email="ngModel"/>
+            <!--Error email-->
+            <div class="errorForm" *ngIf="email.errors && f.submitted">
+                <div *ngIf="email.errors.required">Email is required</div>
+                <div *ngIf="email.errors.email">Email must be a valid email address</div>
+            </div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required minlength="6" #password="ngModel"/>
+            <!--Error password-->
+            <div class="errorForm" *ngIf="password.errors && f.submitted">
+                <div *ngIf="password.errors.required">Password is required</div>
+                <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+            </div>
+        </div>
+
+        <!-- Submit button -->
+        <div class="form-group">
+            <button class="btn btn-primary btn-block">Sign Up</button>
+        </div>
+        
+        <!--Error sign up-->
+        <div class="errorForm" *ngIf="f.submitted && isSignUpFailed">
+            Signup failed!<br />{{ errorMessage }}
+        </div>
+    
+    </form>
+  
+    <!-- Successfull registration -->
+    <div class="successForm" *ngIf="isSuccessful">
+        Your registration is successful!
+    </div>
+</div>

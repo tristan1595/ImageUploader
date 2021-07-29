@@ -10,26 +10,29 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 
 import { GaleryComponent } from './galery/galery.component';
 import { UploadImageComponent } from './upload-image/upload-image.component';
-import { ConnexionComponent } from './connexion/connexion.component';
-import { InscriptionComponent } from './inscription/inscription.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     GaleryComponent,
     UploadImageComponent,
-    ConnexionComponent,
-    InscriptionComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { 
   constructor() {
     library.add(fas, far);
